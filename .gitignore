@@ -12,4 +12,12 @@ gradle-app.setting
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
-sandbox/.idea/misc.xml
+.idea/workspace.xml
+.idea/gradle.xml
+.idea
+sandbox/build
+addressbook-web-tests/build
+addressbook-web-tests/.gradle
+sandbox/out
+
+*.log
