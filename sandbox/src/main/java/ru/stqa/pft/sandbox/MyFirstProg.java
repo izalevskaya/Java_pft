@@ -14,8 +14,9 @@ public class MyFirstProg {
     Rectangle r = new Rectangle(4,6);
     System.out.println ("Площадь прямоугольника со стороной " + r.a + " и " + r.b + " = "+r.area());
 
-    Point p = new Point(1,1, 5,5);
-    System.out.println ("Расстояние между точками "+distance(p));
+    Point p1 = new Point(1,1);
+    Point p2 = new Point(-1,2);
+    System.out.println ("Расстояние между точками "+distance(p1,p2));
 
 
   }
@@ -24,9 +25,9 @@ public class MyFirstProg {
     System.out.println("Hello,"+somebody + "!");
 
   }
-
-  public static double distance (Point p){
-    return Math.sqrt((p.x2 - p.x1) * (p.x2 - p.x1) + (p.y2 - p.y1) * (p.y2 - p.y1));
+// Функция
+  public static double distance (Point p1,Point p2){
+    return Math.sqrt((p2.x - p1.x) * (p2.x - p1.x) + (p2.y - p1.y) * (p2.y - p1.y));
   }
 
   }
