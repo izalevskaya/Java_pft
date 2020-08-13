@@ -19,7 +19,7 @@ public class GroupCreationTests {
 
   @BeforeClass(alwaysRun = true)
   public void setUp() throws Exception {
-    driver = new FirefoxDriver(new FirefoxOptions().setLegacy(true).setBinary("C:/Program Files/Mozilla Firefox/firefox.exe"));
+    driver = new FirefoxDriver(new FirefoxOptions().setLegacy(true).setBinary("C:\\Users\\user\\Desktop\\firefox-52.0esr.win64.sdk\\firefox-sdk\\bin\\firefox.exe"));
     baseUrl = "https://www.google.com/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
