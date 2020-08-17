@@ -1,5 +1,10 @@
-.gradle
-/build/
+.idea/workspace.xml
+.idea/uiDesigner.xml
+
+**/.gradle
+**/.idea
+**/build
+
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -12,12 +17,3 @@ gradle-app.setting
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
-.idea/workspace.xml
-.idea/gradle.xml
-.idea
-sandbox/build
-addressbook-web-tests/build
-addressbook-web-tests/.gradle
-sandbox/out
-
-*.log
