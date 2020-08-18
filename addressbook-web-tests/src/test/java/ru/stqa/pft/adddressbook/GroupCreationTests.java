@@ -22,10 +22,6 @@ public class GroupCreationTests {
     driver = new FirefoxDriver(new FirefoxOptions().setLegacy(true).setBinary("C:\\Users\\user\\Desktop\\firefox-52.0esr.win64.sdk\\firefox-sdk\\bin\\firefox.exe"));
     baseUrl = "https://www.google.com/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-  }
-
-  @Test
-  public void testUntitledTestCase() throws Exception {
     driver.get("http://localhost/addressbook/group.php");
     driver.findElement(By.name("user")).click();
     driver.findElement(By.name("user")).clear();
@@ -35,6 +31,10 @@ public class GroupCreationTests {
     driver.findElement(By.name("pass")).clear();
     driver.findElement(By.name("pass")).sendKeys("secret");
     driver.findElement(By.xpath("//input[@value='Login']")).click();
+  }
+
+  @Test
+  public void testUntitledTestCase() throws Exception {
     driver.findElement(By.linkText("groups")).click();
     driver.findElement(By.name("new")).click();
     driver.findElement(By.name("group_name")).click();
