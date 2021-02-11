@@ -27,28 +27,44 @@ class ContactCreationTests {
   @Test
   public void testUntitledTestCase() throws Exception {
     driver.get("http://localhost/addressbook/group.php");
-    driver.findElement(By.name("user")).click();
-    driver.findElement(By.name("user")).clear();
-    driver.findElement(By.name("user")).sendKeys("admin");
-    driver.findElement(By.name("pass")).click();
-    driver.findElement(By.name("pass")).clear();
-    driver.findElement(By.name("pass")).sendKeys("secret");
-    driver.findElement(By.xpath("//input[@value='Login']")).click();
-    driver.findElement(By.xpath("//body")).click();
-    driver.findElement(By.linkText("add new")).click();
+    login("admin", "secret");
+    gotoAddewPage();
+    fillContactForm(new ContactData("Irina", "Zalevskaya", "+79040721309", "izalevskaya@issart.com"));
+    submitContactCreation();
+  }
+
+  private void submitContactCreation() {
+    driver.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
+  }
+
+  private void fillContactForm(ContactData contactData) {
     driver.findElement(By.name("firstname")).click();
     driver.findElement(By.name("firstname")).clear();
-    driver.findElement(By.name("firstname")).sendKeys("Irina");
+    driver.findElement(By.name("firstname")).sendKeys(contactData.getName());
     driver.findElement(By.name("lastname")).click();
     driver.findElement(By.name("lastname")).clear();
-    driver.findElement(By.name("lastname")).sendKeys("Zalevskaya");
+    driver.findElement(By.name("lastname")).sendKeys(contactData.getLastname());
     driver.findElement(By.name("mobile")).click();
     driver.findElement(By.name("mobile")).clear();
-    driver.findElement(By.name("mobile")).sendKeys("+79040721309");
+    driver.findElement(By.name("mobile")).sendKeys(contactData.getPhone());
     driver.findElement(By.name("email")).click();
     driver.findElement(By.name("email")).clear();
-    driver.findElement(By.name("email")).sendKeys("izalevskaya@issart.com");
-    driver.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
+    driver.findElement(By.name("email")).sendKeys(contactData.getEmail());
+  }
+
+  private void gotoAddewPage() {
+    driver.findElement(By.xpath("//body")).click();
+    driver.findElement(By.linkText("add new")).click();
+  }
+
+  private void login(String username, String password) {
+    driver.findElement(By.name("user")).click();
+    driver.findElement(By.name("user")).clear();
+    driver.findElement(By.name("user")).sendKeys(username);
+    driver.findElement(By.name("pass")).click();
+    driver.findElement(By.name("pass")).clear();
+    driver.findElement(By.name("pass")).sendKeys(password);
+    driver.findElement(By.xpath("//input[@value='Login']")).click();
   }
 
   @AfterClass(alwaysRun = true)
